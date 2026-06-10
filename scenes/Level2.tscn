@@ -1,26 +1,34 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqj752a4dprbw"]
+[gd_scene load_steps=7 format=3]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1"]
-[ext_resource type="FontFile" uid="uid://deexvk5xst7js" path="res://assets/fonts/KenneyPixel.ttf" id="2"]
+[ext_resource type="FontFile" path="res://assets/fonts/KenneyPixel.ttf" id="2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/block_basement.png" id="3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/wallpaper_basement.png" id="4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/window_basement.png" id="5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/barrel.png" id="6"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1")
 map_text = "###############
-#..K...W....K.#
+#.K.........K.#
 #.............#
-#....######...#
-#.........W...#
-#.............#
+#...######....#
+#..W......W...#
 #.............#
 #......T......#
 #.....###....^#
 #............^#
 #.............#
-#oP..K.M..^.oD#
+#oP.K.S...^.oD#
 ###############"
-win_scene = "res://scenes/Level2.tscn"
-intro_text = "Tu te réveilles dans une maison que tu ne connais pas.
-Les portes sont fermées. Quelque part, les clés attendent."
+win_scene = "res://scenes/WinScreen.tscn"
+intro_text = "Sous la maison, une cave humide.
+Ici aussi, le bas n'est qu'une question de point de vue."
+twist_text = "La cave se retourne."
+block_tex = ExtResource("3")
+wallpaper_tex = ExtResource("4")
+window_tex = ExtResource("5")
+decor_tex = ExtResource("6")
 
 [node name="BG" type="CanvasLayer" parent="."]
 layer = -1
@@ -29,7 +37,7 @@ layer = -1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color(0.7, 0.55, 0.46, 1)
+color = Color(0.16, 0.18, 0.24, 1)
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -38,7 +46,7 @@ offset_left = 16.0
 offset_top = 12.0
 offset_right = 240.0
 offset_bottom = 48.0
-theme_override_colors/font_color = Color(0.95, 0.85, 0.55, 1)
+theme_override_colors/font_color = Color(0.8, 0.85, 0.95, 1)
 theme_override_fonts/font = ExtResource("2")
 theme_override_font_sizes/font_size = 28
 text = "Cles  0 / 3"
@@ -50,7 +58,7 @@ layer = 5
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color(0.08, 0.06, 0.1, 1)
+color = Color(0.06, 0.07, 0.1, 1)
 
 [node name="CardText" type="Label" parent="Cards"]
 anchors_preset = 15
@@ -60,7 +68,7 @@ offset_left = 60.0
 offset_right = -60.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.96, 0.9, 0.78, 1)
+theme_override_colors/font_color = Color(0.85, 0.9, 1, 1)
 theme_override_fonts/font = ExtResource("2")
 theme_override_font_sizes/font_size = 40
 text = "..."

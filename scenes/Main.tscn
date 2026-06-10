@@ -1,12 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://de4hbxkcwlu"]
+[gd_scene load_steps=4 format=3 uid="uid://n4xud23cihhm"]
 
-[ext_resource type="FontFile" uid="uid://cr8k45iks0kby" path="res://assets/fonts/KenneyFuture.ttf" id="1"]
-[ext_resource type="FontFile" uid="uid://deexvk5xst7js" path="res://assets/fonts/KenneyPixel.ttf" id="2"]
-[ext_resource type="Texture2D" uid="uid://dg4epepkh3xmn" path="res://assets/sprites/player_idle.png" id="3"]
-[ext_resource type="Texture2D" uid="uid://dpfwskx0p3ykw" path="res://assets/sprites/key.png" id="4"]
-[ext_resource type="Texture2D" uid="uid://fhkwy12u18d5" path="res://assets/sprites/door.png" id="5"]
-[ext_resource type="Texture2D" uid="uid://ccn0rbxxco63s" path="res://assets/sprites/block.png" id="6"]
-[ext_resource type="Texture2D" uid="uid://b8fmwmroxq2xk" path="res://assets/sprites/spike.png" id="7"]
+[ext_resource type="Script" path="res://scripts/title.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://cr8k45iks0kby" path="res://assets/fonts/KenneyFuture.ttf" id="2"]
+[ext_resource type="FontFile" uid="uid://deexvk5xst7js" path="res://assets/fonts/KenneyPixel.ttf" id="3"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -15,88 +11,57 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1")
 
 [node name="BG" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 color = Color(0.13, 0.1, 0.16, 1)
 
 [node name="Center" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -300.0
-offset_top = -150.0
-offset_right = 300.0
-offset_bottom = 150.0
+offset_left = -340.0
+offset_top = -180.0
+offset_right = 340.0
+offset_bottom = 180.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 18
+theme_override_constants/separation = 22
 alignment = 1
 
 [node name="Title" type="Label" parent="Center"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.95, 0.78, 0.44, 1)
-theme_override_fonts/font = ExtResource("1")
-theme_override_font_sizes/font_size = 72
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 76
 text = "SWITCH IT!"
 horizontal_alignment = 1
 
 [node name="Intro" type="Label" parent="Center"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85, 0.85, 0.9, 1)
-theme_override_fonts/font = ExtResource("2")
+theme_override_fonts/font = ExtResource("3")
 theme_override_font_sizes/font_size = 28
-text = "Tu te réveilles dans une maison que tu ne connais pas.
-Les portes sont fermées. Quelque part, les clés attendent."
+text = "Une maison. Des clés. Et puis tout bascule."
 horizontal_alignment = 1
 
-[node name="Sprites" type="HBoxContainer" parent="Center"]
+[node name="Start" type="Button" parent="Center"]
+custom_minimum_size = Vector2(240, 64)
 layout_mode = 2
-theme_override_constants/separation = 28
-alignment = 1
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3")
+theme_override_font_sizes/font_size = 32
+text = "Commencer"
 
-[node name="Player" type="TextureRect" parent="Center/Sprites"]
-custom_minimum_size = Vector2(72, 72)
-layout_mode = 2
-texture = ExtResource("3")
-stretch_mode = 5
-
-[node name="Key" type="TextureRect" parent="Center/Sprites"]
-custom_minimum_size = Vector2(72, 72)
-layout_mode = 2
-texture = ExtResource("4")
-stretch_mode = 5
-
-[node name="Door" type="TextureRect" parent="Center/Sprites"]
-custom_minimum_size = Vector2(72, 72)
-layout_mode = 2
-texture = ExtResource("5")
-stretch_mode = 5
-
-[node name="Block" type="TextureRect" parent="Center/Sprites"]
-custom_minimum_size = Vector2(72, 72)
-layout_mode = 2
-texture = ExtResource("6")
-stretch_mode = 5
-
-[node name="Spike" type="TextureRect" parent="Center/Sprites"]
-custom_minimum_size = Vector2(72, 72)
-layout_mode = 2
-texture = ExtResource("7")
-stretch_mode = 5
-
-[node name="Hint" type="Label" parent="Center"]
+[node name="Controls" type="Label" parent="Center"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.55, 0.55, 0.62, 1)
-theme_override_fonts/font = ExtResource("2")
-theme_override_font_sizes/font_size = 20
-text = "Smoke-test : si tu vois le titre, le texte et les 5 sprites nets, l'import est bon."
+theme_override_fonts/font = ExtResource("3")
+theme_override_font_sizes/font_size = 22
+text = "← →  ou  Q D : bouger      Espace : inverser la gravité (au sol)      R : recommencer"
 horizontal_alignment = 1

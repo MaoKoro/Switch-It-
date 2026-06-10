@@ -49,6 +49,14 @@ theme_override_font_sizes/font_size = 26
 text = "La derniere porte s'ouvre."
 horizontal_alignment = 1
 
+[node name="Credit" type="Label" parent="Center"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.42, 0.32, 1)
+theme_override_fonts/font = ExtResource("3")
+theme_override_font_sizes/font_size = 20
+text = "Switch It! — Tiny Game, Big Twist Jam · Assets : Kenney (CC0) · Godot 4.3"
+horizontal_alignment = 1
+
 [node name="Buttons" type="HBoxContainer" parent="Center"]
 layout_mode = 2
 theme_override_constants/separation = 28
