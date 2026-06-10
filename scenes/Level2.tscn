@@ -12,14 +12,13 @@ script = ExtResource("1")
 map_text = "###############
 #.K.........K.#
 #.............#
-#...######....#
+#........####.#
 #..W......W...#
-#.............#
 #......T......#
-#.....###....^#
-#............^#
+#.....###.....#
 #.............#
-#oP.K.S...^.oD#
+#.............#
+#DP.>>>S.K^.o.#
 ###############"
 win_scene = "res://scenes/WinScreen.tscn"
 intro_text = "Sous la maison, une cave humide.
@@ -37,7 +36,7 @@ layer = -1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color(0.16, 0.18, 0.24, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
